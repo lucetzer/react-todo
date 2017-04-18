@@ -11,8 +11,7 @@ export default class AddItem extends Component {
   }
 
   updateItem(evt) {
-  	if (evt.key === 'Enter') {
-      console.log(evt.target.value);
+  	if (evt.key === 'Enter' && evt.target.value !== '') {
     	this.props.addNewItem(evt.target.value);
       this.setState({
       	item: ''

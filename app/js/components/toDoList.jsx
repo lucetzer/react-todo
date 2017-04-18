@@ -3,7 +3,6 @@ import AddItem from './addItem.jsx';
 import DisplayList from './displayList.jsx';
 
 
-
 export default class ToDoList extends Component {
 
   constructor(props, context) {
@@ -22,12 +21,19 @@ export default class ToDoList extends Component {
     });
   };
 
+  clearList(evt) {
+    this.setState({
+      list: [],
+    });
+  };
+
   render() {
   	return (
       <div>
         <h1>{this.state.title}</h1>
         <AddItem addNewItem={(item) => this.addItem(item)} />
         <DisplayList list={this.state.list} />
+        <button onClick={(e) => this.clearList(e)}>Clear list</button>
       </div>
     )
   }
