@@ -30,7 +30,7 @@ export default class ToDoList extends Component {
   render() {
   	return (
       <div>
-        <h1>{this.state.title}</h1>
+        <h1 className="title">{this.state.title}</h1>
         <AddItem addNewItem={(item) => this.addItem(item)} />
         <DisplayList list={this.state.list} />
         <button onClick={(e) => this.clearList(e)}>Clear list</button>
